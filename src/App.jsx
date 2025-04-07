@@ -1,6 +1,8 @@
 import TodoHeader from "./components/TodoHeader";
 import SearchTasks from "./components/SearchTask";
-import { Plus } from "lucide-react";
+import Category from "./components/Category";
+import { ToggleGroup } from "./components/ui/toggle-group";
+import { ToggleGroupItem } from "@radix-ui/react-toggle-group";
 
 function App() {
   return (
@@ -9,18 +11,16 @@ function App() {
         <TodoHeader />
         <SearchTasks />
         <div className="w-[600px] mx-auto grid grid-cols-2 justify-center todo-content mt-[50px]">
-          <div className="todo-category">
-            <ul className="mb-[20px]">
-              <li className="bg-gray-50 dark:bg-zinc-900 inline-block w-[167px] h-[47px] text-[24px] rounded-[10px] p-2 mb-1.5 cursor-pointer">All</li>
-              <li className="inline-block w-[167px] h-[47px] text-[24px] rounded-[10px] p-2 mb-1.5 cursor-pointer">Personal</li>
-              <li className="inline-block w-[167px] h-[47px] text-[24px] rounded-[10px] p-2 mb-1.5 cursor-pointer">Work</li>
-            </ul>
-            <div className="flex gap-[6px] text-gray-400 cursor-pointer items-center add-category">
-              <Plus size={18} color="rgb(166, 171, 184)" />Add Category
-            </div>
-          </div>
+            <Category />
           <div className="todo-tasks">
-            <div className="todo-filter"></div>
+            <div className="todo-filter">
+            <ToggleGroup className="flex justify-between text-center bg-white" type="single">
+              <ToggleGroupItem className="border hover:bg-gray-50 dark:bg-zinc-900 bg-gray-100 p-2.5 rounded-l-lg w-[82px] text-[18px] cursor-pointer shadow-lg" value="all">All</ToggleGroupItem>
+              <ToggleGroupItem className="border hover:bg-gray-50 dark:bg-zinc-900 p-2.5 border-r-0 border-l-0 w-[124px] text-[18px] cursor-pointer shadow-lg" value="active">Active</ToggleGroupItem>
+              <ToggleGroupItem className="border hover:bg-gray-50 dark:bg-zinc-900 p-2.5 rounded-r-lg w-[155px] text-[18px] cursor-pointer shadow-lg" value="completed">Completed</ToggleGroupItem>
+            </ToggleGroup>
+
+            </div>
             <div className="todo-item"></div>
           </div>
         </div>
