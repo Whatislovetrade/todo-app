@@ -3,6 +3,8 @@
 
 @custom-variant dark (&:is(.dark *));
 
+
+
 :root {
   font-family: Inter, system-ui, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -192,10 +194,12 @@
   }
 }
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
+  outline: none;
   font-family: Inter;
-  font-size: 14px;
-}
+} */
+
