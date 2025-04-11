@@ -1,9 +1,9 @@
 import { Input } from "../ui/input"
 
-const SearchTasks = () => {
+const SearchTasks = ({ searchIcon }) => {  
   return (
     <Input
-        className="
+      className="
             input-task
             border 
             border-solid
@@ -22,9 +22,10 @@ const SearchTasks = () => {
             focus:text-black
             dark:focus:text-white
         "
-        type="text"
-        name="search"
-        placeholder="Search tasks"
+      type="text"
+      name="search"
+      placeholder="Search tasks"
+      searchIcon={searchIcon}
   />
   )
 }

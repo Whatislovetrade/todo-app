@@ -5,12 +5,15 @@ import { Search } from "lucide-react";
 
 function Input({
   className,
-  type,
+  type = "text",
+  searchIcon = false,
   ...props
 }) {
   return (
     <div className="relative block mx-auto w-[600px] mt-10">
-      <Search className="todo-icon absolute left-3 top-1/2 h-[25px] w-[25px] -translate-y-1/2 text-gray-300 pointer-events-none" />
+        {searchIcon && (
+        <Search className="todo-icon absolute left-3 top-1/2 h-[25px] w-[25px] -translate-y-1/2 text-gray-300 pointer-events-none" />
+      )}
       <input
         type={type}
         data-slot="input"
