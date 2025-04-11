@@ -14,7 +14,7 @@ function AddTask() {
         placeholder: text-gray-500
         text-[24px]
         font-normal
-        pl-12
+        pl-3
         py-2
         dark:shadow-neutral-800
         outline-0

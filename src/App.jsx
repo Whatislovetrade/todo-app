@@ -11,14 +11,14 @@ function App() {
       <div className="todo-app bg-white dark:bg-gray-900 dark:shadow-neutral-800 w-3xl min-h-screen rounded-[20px] shadow-2xl">
         <TodoHeader />
         <SearchTasks searchIcon={true} />
-        <div className="todo-content w-[600px] mx-auto grid grid-cols-2 justify-center mt-[50px]">
+        <section className="todo-content w-[600px] mx-auto grid grid-cols-2 justify-center mt-[50px]">
           <Category />
           <div className="todo-tasks">
             <Filter />
             <TaskList />
           </div>
           <AddTask />
-        </div>
+        </section>
      
       </div>
     </div>
