@@ -2,14 +2,16 @@ import { Input } from "../ui/input"
 
 const SearchTasks = ({ searchIcon }) => {  
   return (
-    <Input
+    <div className="w-full sm:min-w-[600px]">
+      <Input
       className="
             input-task
             border 
             border-solid
             border-gray-200/50
             rounded-[10px]
-            min-w-[600px]
+            w-full
+            sm:min-w-[600px]
             h-[67px]
             shadow-md
             placeholder: text-gray-500
@@ -27,6 +29,8 @@ const SearchTasks = ({ searchIcon }) => {
       placeholder="Search tasks"
       searchIcon={searchIcon}
   />
+    </div>
+    
   )
 }
 
