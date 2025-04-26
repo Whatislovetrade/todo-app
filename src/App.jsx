@@ -7,7 +7,7 @@ import AddTask from "./components/AddTask/AddTask";
 
 function App() {
   return (
-    <div className="flex justify-center items-center min-w-screen h-full">
+    <div className="flex items-center justify-center h-full min-w-screen">
       <div className="todo-app bg-white dark:bg-gray-900 dark:shadow-neutral-800 w-3xl min-h-screen rounded-[20px] shadow-2xl">
         <TodoHeader />
         <SearchTasks searchIcon={true} />
