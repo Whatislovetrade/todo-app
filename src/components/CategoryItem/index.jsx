@@ -2,8 +2,6 @@ import { useState } from "react"
 import classNames from "classnames"
 
 const CategoryItem = ({ categoryArr }) => {
-
-  console.log('Render',categoryArr);
   
   const [isActive, setIsActive] = useState(categoryArr[0].id)
   
