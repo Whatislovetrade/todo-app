@@ -3,10 +3,10 @@ import TaskItem from "../TaskItem/TaskItem"
 
 
 
-function TaskList({items}) {
+function TaskList({items, deleteItems}) {
     return (
     <>
-        <TaskItem items={items}/>
+        <TaskItem deleteItems={deleteItems} items={items}/>
     </>
 
   )

@@ -17,9 +17,14 @@ const taskArray = [
 
 function App() {
   const [items, setItems] = useState(taskArray)
+  
   const addItems = (name) => { 
     setItems(prev => [...prev, {id: nanoid(), name}])
-  } 
+  }
+
+  const deleteItems = (id) => {
+    setItems(prev => prev.filter(item => item.id !== id))
+  }
   
   return (
     <div className="flex items-center justify-center h-full min-w-screen">
@@ -30,7 +35,7 @@ function App() {
           <Category />
           <div className="todo-tasks">
             <Filter />
-            <TaskList items={items} />
+            <TaskList deleteItems={deleteItems} items={items} />
           </div>
           <AddTask addItems={ addItems } />
         </section>
