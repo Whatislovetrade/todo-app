@@ -1,10 +1,24 @@
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import { useState } from "react";
 
-function AddTask() {
+function AddTask({addItems}) {
+  const [value, setValue] = useState('')
+  
+  const handleChange = (event) => {
+    setValue(event.target.value)
+  }
+
+  const handleAdd = () => {
+    if (value.trim() === "") return
+    addItems(value);
+    setValue(""); // очищаем поле
+  }
+  
+
   return (
-    <div className="todo-add grid col-span-2 grid-cols-2 justify-items-end items-baseline mb-5">
-        <Input className="
+    <div className="grid items-baseline grid-cols-2 col-span-2 mb-5 todo-add justify-items-end">
+      <Input onChange={handleChange} value={ value } className="
         border 
         border-solid
         border-gray-200/50
@@ -24,7 +38,8 @@ function AddTask() {
         "
         placeholder="Add new task"
         />
-        <Button className="w-[100px] h-[57px] text-2xl cursor-pointer z-10">Add</Button>
+      <Button onClick={handleAdd}
+        className="w-[100px] h-[57px] text-2xl cursor-pointer z-10">Add</Button>
     </div>
   )
 }
